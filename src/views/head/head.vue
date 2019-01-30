@@ -31,8 +31,8 @@
                 ]</li>
                 <li id="ECS_MEMBERZONE" v-else>
                 <router-link :to="'/app/login'">请登录</router-link>
-                
-                 <router-link :to="'/app/register'">免费注册</router-link>
+                 &nbsp; &nbsp;
+                 <router-link :to="'/app/register'">注册</router-link>
                 </li>
                 </ul>
         </div>
@@ -459,6 +459,9 @@ fieldset,img {
 }
 .hd_bar li.more-menu a {
     color:#fff
+}
+.hd_bar #ECS_MEMBERZONE a{
+    color: #fff
 }
 .hd_bar li.more-menu i.arrow {
     position:absolute;
