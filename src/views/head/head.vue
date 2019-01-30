@@ -8,19 +8,20 @@
             </ul>
             <ul id="userinfo-bar">
                 <li class="more-menu" @mouseover="isShowLng=true" @mouseout="isShowLng=false">
-                    <a>中文</a>
+                    <a>中文/Eng</a>
                     <div class="more-bd" :class="{show:isShowLng}">
                         <div class="list">
-                        <router-link :to="'/app/en/home/member/order'">English</router-link>
+                        <a @click='langToggleZH'>中文</a>
+                        <a @click='langToggleEN'>English</a>
                         </div>
                     </div>
                 </li>
-                <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false"> <a>用户中心</a><i class="iconfont arrow"> </i>
+                <li class="more-menu" @mouseover="isShowVip=true" @mouseout="isShowVip=false"> <a>{{$t("login.usercenter")}}</a><i class="iconfont arrow"> </i>
                     <div class="more-bd" :class="{show:isShowVip}">
                         <div class="list">
-                        <router-link :to="'/app/home/member/order'">我的订单</router-link>
-                        <router-link :to="'/app/home/member/collection'">我的收藏</router-link>
-                        <router-link :to="'/app/home/member/workbench'">我的工作台</router-link>
+                        <router-link :to="'/app/home/member/order'">{{$t("login.myorder")}}</router-link>
+                        <router-link :to="'/app/home/member/collection'">{{$t("login.mycollection")}}</router-link>
+                        <router-link :to="'/app/home/member/workbench'">{{$t("login.myworkbench")}}</router-link>
                         </div>
                     </div>
                 </li>
@@ -30,9 +31,9 @@
                 <a @click="loginOut">退出</a>
                 ]</li>
                 <li id="ECS_MEMBERZONE" v-else>
-                <router-link :to="'/app/login'">请登录</router-link>
+                <router-link :to="'/app/login'">{{$t("login.login")}}</router-link>
                  &nbsp; &nbsp;
-                 <router-link :to="'/app/register'">注册</router-link>
+                 <router-link :to="'/app/register'">{{$t("login.register")}}</router-link>
                 </li>
                 </ul>
         </div>
@@ -140,6 +141,19 @@ export default {
             //     .catch(function (error) {
             //       console.log(error);
             // });
+        },
+        langToggle(){
+            if(this.$i18n.locale == 'zh_CN'){
+                this.$i18n.locale = 'en_US';
+            }else{
+                this.$i18n.locale = 'zh_CN';
+            }
+        },
+        langToggleZH(){            
+            this.$i18n.locale = 'zh_CN';
+        },
+        langToggleEN(){
+            this.$i18n.locale = 'en_US';
         },
         overAllmenu(){
             this.showAllmenu = true;
@@ -928,7 +942,7 @@ fieldset,img {
     transition:all .4s
 }
 .hd_bar .more-bd .list {
-    width:94px;
+    width:110px;
     border:1px solid #ddd;
     background:#000
 }
