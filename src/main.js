@@ -7,6 +7,8 @@ import $ from 'jquery';
 //全局引入vue
 import Vue from 'vue';
 
+//引入多语言支持
+import i18n from './in8n/i18n'
 
 //全局引入共用css
 import './styles/common.scss';
@@ -34,6 +36,7 @@ import App from './App';
 //创建全局实例
 new Vue({
     el:'#app',
+    i18n,     //挂载i18n
     router,
     store,
     template:'<App/>',
