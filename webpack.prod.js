@@ -97,7 +97,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 100000,
-                    name: 'static/images/[name].[hash:7].[ext]'
+                    name: '/static/images/[name].[hash:7].[ext]'
                 }
             },
             {
@@ -105,7 +105,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'static/fonts/[name].[hash:7].[ext]'
+                    name: '/static/fonts/[name].[hash:7].[ext]'
                 }
             },
             {
